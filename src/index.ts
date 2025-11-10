@@ -3,6 +3,8 @@ import cors from 'cors'; // 🔹 Importar cors
 import { initializeDB } from './config/database';
 import userRoutes from './routes/user.routes';
 import AuthRoutes from './routes/auth.routes';
+import ServiceRoutes from './routes/service.routes';
+
 
 const PORT = process.env.PORT || 3000;
 
@@ -16,6 +18,7 @@ app.use(express.json());
 // Rutas
 app.use("/api/user", userRoutes);
 app.use("/api/auth", AuthRoutes);
+app.use("/api/service", ServiceRoutes);
 
 const main = async () => {
     try {
