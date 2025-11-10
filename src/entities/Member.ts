@@ -25,4 +25,5 @@ export class Member {
 
     @UpdateDateColumn({ type: 'timestamp' })
     updated_at!: Date;
+    
 }
