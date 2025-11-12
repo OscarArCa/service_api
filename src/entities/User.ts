@@ -21,7 +21,7 @@ export class User {
 
     // --- Columnas de Datos Personales ---
 
-    @Column({ type: 'varchar', length: 255 }) // El DDL era 255
+    @Column({ type: 'varchar', length: 255 })
     first_names!: string; // Renombrado de 'first_name' a 'first_names' (DDL: nombres)
 
     @Column({ type: 'varchar', length: 255 }) // El DDL era 255
