@@ -1,3 +1,5 @@
+// src/controllers/ServiceController.ts
+
 import { Request, Response } from "express";
 import { AppDataSource } from "../config/database";
 import { Service } from "../entities/Service";
@@ -8,8 +10,11 @@ export class ServiceController{
         
         const repo = AppDataSource.getRepository(Service);
 
-        const service = await repo.find();
+        // Opción mejorada: Cargar la relación 'paymentPeriod' junto con el servicio.
+        const service = await repo.find({
+            relations: ['paymentPeriod'] 
+        });
 
-        return res.json({message: "obtencion de datos exitosa",service})
+        return res.json({message: "obtencion de datos exitosa", service})
     }
 }
